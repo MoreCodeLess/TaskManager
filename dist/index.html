@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/index.4a508c1d.css">
+    <title>TaskManager</title>
+  </head>
+  <body>
+
+    <!-- Login Section -->
+    <section id="login-section">
+      <div class="screen-1">
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
+          <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+              <circle style="stroke: #000; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #3d4785; fill-rule: nonzero; opacity: 1" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
+              <circle style="stroke: #000; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #fff; fill-rule: nonzero; opacity: 1" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
+              <circle style="stroke: #000; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #fff; fill-rule: nonzero; opacity: 1" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
+              <circle style="stroke: #000; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #fff; fill-rule: nonzero; opacity: 1" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
+              <polygon style="stroke: #000; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #fff; fill-rule: nonzero; opacity: 1" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
+              <polygon style="stroke: #000; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #fff; fill-rule: nonzero; opacity: 1" vector-effect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+      </svg>
+    <div class="email"><label for="email">Username</label>
+        <div class="sec-2">
+            <ion-icon name="mail-outline"></ion-icon><input type="email" name="email" id="username" placeholder="Username">
+        </div>
+    </div>
+    <div class="password"><label for="password">Password</label>
+        <div class="sec-2">
+            <ion-icon name="lock-closed-outline"></ion-icon><input class="pas" type="password" name="password" id="password" placeholder="············">
+            <ion-icon class="show-hide" name="eye-outline"></ion-icon>
+        </div>
+    </div><button class="login" onclick="login()">Login</button>
+    <div class="footer"></div>
+  </div>
+    </section>
+
+<!-- Dashboard section -->
+
+<section class="dashboard-section" id="dashboard-section">
+  <div class="task-manager">
+    <div class="page-content">
+      <div class="header">Tasks</div>
+      <div class="tasks-wrapper" id="tasks-wrapper">
+        <div class="header upcoming"></div>
+      </div>
+      <div class="right-bar">
+        <div class="header">Urgent!</div>
+        <div class="right-content" id="dash-tasks">
+          
+        </div>
+        <div class="buttons">
+          <button id="open-tasks" class="open-tasks" onclick="openTasks()">
+            Tasks
+          </button>
+          <button id="new-task" class="new-task" onclick="openNewTask()">
+            New Task
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tasks-section" id="tasks-section">
+  <div class="task-manager">
+  <div class="page-content">
+  <div class="right-bar">
+  <div class="right-content" id="tasks-sec-here">
+    <div class="task-box yellow">
+      <div class="description-task">
+        <div class="time">08:00 - 09:00 AM</div>
+        <div class="task-name">Product Review</div>
+      </div>  
+    </div>
+    <div class="task-box blue">
+      <div class="description-task">
+        <div class="time">10:00 - 11:00 AM</div>
+        <div class="task-name">Design Meeting</div>
+      </div>
+    </div>
+    <div class="task-box red">
+      <div class="description-task">
+        <div class="time">01:00 - 02:00 PM</div>
+        <div class="task-name">Team Meeting</div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <button id="open-tasks" class="open-tasks" onclick="openDash()">
+      Dashboard
+    </button>
+    <button id="new-task" class="new-task" onclick="openNewTask()">
+      New Task
+    </button>
+  </div>
+  </div>
+</div>
+</div>
+
+</section>
+
+
+
+<section class="newtask-section" id="newtask-section">
+  <div class="task-manager">
+  <div class="page-content">
+  <div class="right-bar">
+  <div class="form-content">
+    <form class="form">
+      <label for="ftitle">Title:</label><br>
+      <input type="text" id="ftitle" name="ftitle"><br>
+      <label for="fcategory">Category:</label><br>
+      <input type="text" id="fcategory" name="fcategory" placeholder="approved, progress or review">
+      <label for="fdate">date:</label><br>
+      <input type="date" id="fdate" name="fdate">
+      <label for="fdescription">Description:</label><br>
+      <input type="text" id="fdescription" class="des" name="fdescription"><br>
+      <button type="button" id="submitButton" class="sub-button">Save</button>
+    </form>
+  </div>
+  <div class="buttons">
+    <button id="open-tasks" class="open-tasks" onclick="openDash()">
+      Dashboard
+    </button>
+  </div>
+  </div>
+</div>
+</div>
+
+</section>
+
+
+
+
+<script src="/index.de5c0784.js"></script>
+  <script src="/appsmoviles.59712999.js"></script></body>
+</html> 

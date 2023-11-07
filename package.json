@@ -5,8 +5,12 @@
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
+    "clean:dev": "rimraf ./dist",
+    "clean:prod": "rimraf ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel",
+    "dev": "npm run clean:dev && parcel",
+    "prod": "npm run clean:prod && parcel build",
     "build": "parcel build"
   },
   "keywords": [],

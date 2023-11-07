@@ -34,6 +34,7 @@ function createTask(title, category, date, description) {
   };
   savedTasks.push(inputTask);
   localStorage.setItem("tasks", JSON.stringify(savedTasks));
+  openDash();
 }
 
 function login() {

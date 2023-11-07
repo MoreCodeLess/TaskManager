@@ -29,6 +29,7 @@ function createTask(title, category, date, description) {
     };
     savedTasks.push(inputTask);
     localStorage.setItem("tasks", JSON.stringify(savedTasks));
+    openDash();
 }
 function login() {
     const users = {
@@ -43,10 +44,10 @@ function login() {
     const passInput = document.getElementById("password");
     const password = passInput.value;
     const username = userInput.value;
-    //if ((users[username] == username) && (passwords[username] == password)) {
-    loginSec.classList.add("hidden");
-    openDash();
-//   }
+    if (users[username] == username && passwords[username] == password) {
+        loginSec.classList.add("hidden");
+        openDash();
+    }
 }
 function openTasks() {
     hide();
@@ -61,6 +62,24 @@ function openDash() {
 function openNewTask() {
     hide();
     newtask.classList.remove("hidden");
+}
+function deleteSelectedTasks() {
+    const tasks = document.getElementsByName("task");
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const selectedTasks = [];
+    for(let i = 0; i < tasks.length; i++)if (tasks[i].checked) selectedTasks.push(savedTasks[i]);
+    if (selectedTasks.length === 0) {
+        alert("Please select at least one task to delete.");
+        return;
+    }
+    const confirmed = window.confirm("Are you sure you want to delete the selected tasks?");
+    if (confirmed) {
+        const updatedTasks = savedTasks.filter((task, index)=>{
+            return !tasks[index].checked;
+        });
+        localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+        loadDashTasks();
+    }
 }
 function loadDashTasks() {
     const miDiv = document.getElementById("tasks-wrapper");

@@ -462,6 +462,13 @@ label .label-text:before {
   height: 30px;
 }
 
+.delete-task {
+  background-color: #b81b1b;
+  border-radius: 10px;
+  max-width: 100px;
+  height: 30px;
+}
+
 .buttons {
   flex: 1;
   max-height: 50px;

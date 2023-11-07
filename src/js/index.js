@@ -1,4 +1,5 @@
 const dashboard = document.getElementById("dashboard-section");
+
 const loginSec = document.getElementById("login-section");
 const tasks = document.getElementById("tasks-section");
 const newtask = document.getElementById("newtask-section");
